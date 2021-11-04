@@ -1,5 +1,12 @@
 # zad3API
 
+API to jest oparte na innym API do którego link znajduje się tutaj
+[API](https://github.com/klesniewski50/zad2API)
+[dokumentacja](https://github.com/klesniewski50/zad2API#readme)
+
+Stworzone przeze mnie API przyjmuje jeden paramentr:
+* text - tekst dla którego chcemy otrzymać zwracane argumenty
+
 Stworzene przeze mnie API zwraca następujące arguemty:
 * original-text - oryginalny tekst
 * length - długość tekstu
