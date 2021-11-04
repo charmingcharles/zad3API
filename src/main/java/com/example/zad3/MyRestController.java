@@ -14,16 +14,22 @@ public class MyRestController {
         return text;
     } //can be used for testing connection
 
-    @RequestMapping(value = "/apiresult", produces=MediaType.APPLICATION_XML_VALUE) //example: http://localhost:8090/apiresult?text=Karol
-    public String apiresult(@RequestParam(value = "text", defaultValue = "Karol") String text, @RequestParam(value = "text", defaultValue = "Karol") String format) {
+    @RequestMapping(value = "/xmlresult", produces=MediaType.APPLICATION_XML_VALUE) //example: http://localhost:8090/xmlresult?text=Karo
+    public String xmlresult(@RequestParam(value = "text", defaultValue = "Karol") String text) {
         final String uri = "http://localhost:8080/count?text=" + text;
 
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(uri, String.class);
-
-
-
         return ResultConverter.jsonToXML(result);
-    } //temporary function for local testing
+    }
+
+    @RequestMapping(value = "/textresult") //example: http://localhost:8090/textresult?text=Karo
+    public String textresult(@RequestParam(value = "text", defaultValue = "Karol") String text) {
+        final String uri = "http://localhost:8080/count?text=" + text;
+
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(uri, String.class);
+        return ResultConverter.jsonToText(result);
+    }
 
 }

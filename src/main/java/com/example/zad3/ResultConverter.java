@@ -19,10 +19,20 @@ public class ResultConverter {
         Map<String, Object> map = new Gson()
                 .fromJson(input, new TypeToken<HashMap<String, Object>>() {
                 }.getType());
-        System.out.println(map.toString());
         XStream xStream = new XStream(new DomDriver());
         xStream.alias("map", java.util.Map.class);
         return xStream.toXML(map);
+    }
+
+    public static String jsonToText(String input){
+        Map<String, Object> map = new Gson()
+                .fromJson(input, new TypeToken<HashMap<String, Object>>() {
+                }.getType());
+        StringBuilder output = new StringBuilder();
+        for (var entry : map.entrySet()) {
+            output.append(entry.getKey() + " = " + entry.getValue() + "<br>");
+        }
+        return output.toString();
     }
 
 }
