@@ -10,9 +10,9 @@ Stworzene przeze mnie API zwraca następujące arguemty:
 
 Może to zrobić w 4 różnych formatach:
 * tekst
-* XML
-* JSON
-* CSV
+* [XML](https://www.w3.org/XML/)
+* [JSON](https://www.json.org/json-en.html)
+* [CSV](https://pl.wikipedia.org/wiki/CSV_(format_pliku))
 
 Przykładowe wywołanie jeśli chcemy otrzymać rezulatat w postaci tekstowej:
 ```
